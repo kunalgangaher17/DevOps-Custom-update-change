@@ -1,0 +1,36 @@
+name: 'ServiceNow DevOps Update Change'
+description: 'This is a Custom Action to Update the Change Request Details'
+inputs:
+  instance-url: 
+    description: 'ServiceNow Instance URL'
+    required: true
+  devops-integration-token:
+    description: 'ServiceNow Devops security token'
+    required: false
+  tool-id:
+    description: 'Orchestration Tool Id of the tool created in ServiceNow'
+    required: false
+  devops-integration-user-name:
+    description: 'Devops Integration User Name'
+    required: false
+  devops-integration-user-password:
+    description: 'Devops Integration User Password'
+    required: false
+  context-github:
+    description: 'Github Context'
+    required: true
+  change-request-number:  
+    description: 'Change Request Number to be Updated'
+    required: true
+  change-request-details:
+    description: 'The customized inputs to create change with the requested details.'
+    required: true
+outputs:
+  status: 
+    description: 'What is the status of the Update for given Change Request Number'
+branding:
+  icon: 'refresh-ccw'
+  color: 'green'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
